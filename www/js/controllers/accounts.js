@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.accounts', [])
+angular.module('stellar-wallet.controllers.accounts', [])
 
     .controller('LoginCtrl', function ($scope, $ionicModal, $state, $ionicLoading, $rootScope, User, $ionicPopup) {
         'use strict';

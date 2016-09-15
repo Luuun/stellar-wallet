@@ -1,7 +1,7 @@
 {
-  "name": "generic-client",
+  "name": "stellar-wallet",
   "version": "1.1.1",
-  "description": "generic-client: generic ionic mobile wallet",
+  "description": "stellar-wallet: generic ionic mobile wallet",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

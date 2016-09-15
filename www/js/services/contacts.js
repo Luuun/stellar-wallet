@@ -1,5 +1,5 @@
 /*global Firebase, console, angular */
-angular.module('generic-client.services.contacts', [])
+angular.module('stellar-wallet.services.contacts', [])
 
     .service("ContactsService", function () {
 

@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.help', [])
+angular.module('stellar-wallet.controllers.help', [])
 
     .controller('HelpCtrl', function ($scope) {
         'use strict';

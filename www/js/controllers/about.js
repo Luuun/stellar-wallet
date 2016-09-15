@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.about', [])
+angular.module('stellar-wallet.controllers.about', [])
 
     .controller('AboutCtrl', function ($scope, $state, $http, $window, CompanyDetails) {
         'use strict';

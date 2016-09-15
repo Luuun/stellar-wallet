@@ -1,1 +1,1 @@
-angular.module('generic-client.services', [])
+angular.module('stellar-wallet.services', [])

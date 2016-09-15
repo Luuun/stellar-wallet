@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.receive', [])
+angular.module('stellar-wallet.controllers.receive', [])
 
     .controller('ReceiveCtrl', function ($scope) {
         'use strict';
