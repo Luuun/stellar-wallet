@@ -27,7 +27,7 @@ angular.module('stellar-wallet', ['ionic',
 
     .constant('API', 'https://staging.rehive.com/api/1')
     .constant('REFRESH_INTERVAL', 3000)
-    .constant('COMPANY', 'stellar_test')
+    .constant('COMPANY', 'test_company_1')
 
     .config(function ($httpProvider, $ionicConfigProvider, $compileProvider) {
         'use strict';
