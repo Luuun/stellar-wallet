@@ -18,6 +18,10 @@
 
     <ion-side-menu side="left" class="app-side-menu">
         <ion-content class="container-body">
+            <div class="container-default center company-logo-menu">
+                <img ng-show="Stellar Logo" ng-src="/img/stellar.png"
+                     onError="angular.element(this).scope().companyDetails.logo = false"/>
+            </div>
             <ion-list class="app-side-menu-list">
                 <ion-item menu-close ui-sref="app.home">
                     Home
@@ -47,7 +51,7 @@
                     About
                 </ion-item>
                 <!--<ion-item menu-close ui-sref="app.help">-->
-                    <!--Help-->
+                <!--Help-->
                 <!--</ion-item>-->
                 <ion-item class="item-complex" menu-close ng-click="logout()">
                     <a class="item-content"> Logout </a>

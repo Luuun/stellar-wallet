@@ -25,7 +25,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 //------------------------------------------
 
 // Main Color for elements
-$primary: #3D8AB8;
+$primary: #000;
 //Default: #56C1ED;
 
 // Color of fonts/icons within primary color
@@ -37,7 +37,7 @@ $tertiary: #F6F6F6;
 //Default: #fff;
 
 // Side bar
-$sidebar: #2070A0;
+$sidebar: #000;
 $background: #F6F6F6;
 
 // Notification colors
@@ -383,12 +383,6 @@ input.ng-invalid, input.ng-dirty {
   margin-top: 10px;
 }
 
-.company-logo {
-  img {
-    margin: 50px;
-  }
-}
-
 .container-default {
   padding: 10px;
 }
@@ -453,5 +447,19 @@ input.ng-invalid, input.ng-dirty {
   .title {
     font-weight: 400;
     top: 5px;
+  }
+}
+
+// Image
+.company-logo {
+  img {
+    margin: 50px;
+  }
+}
+
+.company-logo-menu {
+  padding: 15px;
+  img {
+    width: 150px;
   }
 }
