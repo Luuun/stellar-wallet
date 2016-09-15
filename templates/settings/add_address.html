@@ -1,0 +1,45 @@
+<ion--view view-title="Address">
+    <div ng-controller="AddressCtrl">
+        <form name="AddressForm" method="post" novalidate>
+            <ion-content class="container-body">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Address line 1</span>
+                        <input ng-model="data.line_1" name="line_1" type="text" placeholder="e.g. East building, 3rd floor."
+                               value="{{ data.line_1 }}">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Address line 2</span>
+                        <input ng-model="data.line_2" name="line_2" type="text" placeholder="e.g. 14 Back rd."
+                               value="{{ data.line_2 }}">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">City</span>
+                        <input ng-model="data.city" name="city" type="text" placeholder="e.g. Cape Town" value="{{ data.city }}">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Province/State</span>
+                        <input ng-model="data.state_province" name="state_province" type="text" placeholder="e.g. Western Cape"
+                               value="{{ data.state_province }}">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Country</span>
+                        <input ng-model="data.country" name="country" type="text" placeholder="e.g. South Africa" value="{{ data.country }}">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">ZIP/Postal code</span>
+                        <input ng-model="data.code" name="code" type="text" placeholder="e.g. 8100" value="{{ data.code }}">
+                    </label>
+                </div>
+            </ion-content>
+
+            <!-- Footer bar hack to get layout right -->
+            <ion-footer-bar class="high-footer bar-dark">
+            </ion-footer-bar>
+
+            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(AddressForm)" linked="clickMe">
+                <h1 class="title">Save</h1>
+            </button>
+        </form>
+    </div>
+</ion--view>

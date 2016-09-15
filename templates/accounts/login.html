@@ -1,0 +1,51 @@
+<ion-view view-title="Login">
+    <ion-header-bar class="bar bar-header">
+        <h1 class="title">Login</h1>
+    </ion-header-bar>
+
+    <div ng-controller="LoginCtrl" >
+        <ion-content class="container-body" class="container-body" class="padding dashboard">
+            <div class="list card padding">
+                <form name="loginForm" method="post" novalidate>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Email</span>
+                        <input type="email" name="email" ng-model="user.email" placeholder="Email" required>
+                        <div ng-messages="loginForm.email.$error" role="alert" ng-show='loginForm.$submitted || loginForm.email.$dirty'>
+                            <div ng-message="required" class="form-error">Please enter an email address.</div>
+                            <div ng-message="email" class="form-error">Please enter a valid email address.</div>
+                        </div>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Company</span>
+                        <input type="text" name="company_id" ng-model="user.company_id" placeholder="Company ID" required>
+                        <div ng-messages="loginForm.company_id.$error" role="alert" ng-show='loginForm.$submitted || loginForm.company_id.$dirty'>
+                            <div ng-message="required" class="form-error">Please enter a company ID.</div>
+                        </div>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Password</span>
+                        <input type="password" name="password" ng-model="user.password" placeholder="Password" required>
+                        <div ng-messages="loginForm.password.$error" role="alert" ng-show='loginForm.$submitted || loginForm.password.$dirty'>
+                            <div ng-message="required" class="form-error">Please enter a password.</div>
+                        </div>
+                    </label>
+                    <button ng-click="logIn(loginForm)" class="button button-block">
+                        Log In
+                    </button>
+                </form>
+                <button ng-click="ShowModalForgot()"
+                        class="button button-clear button-block">
+                    <small>Forgot password?</small>
+                </button>
+            </div>
+
+            <div class="list text-center">
+                <button ng-click="ShowModalSignup()"
+                        class="button button-small button-outline icon-left ion-person-add">
+                    Create New Account
+                </button>
+            </div>
+
+        </ion-content>
+    </div>
+</ion-view>

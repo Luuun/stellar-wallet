@@ -1,0 +1,25 @@
+<ion--view view-title="Bank Accounts">
+    <ion-content class="container-body">
+        <ion-refresher pulling-text="pull to refresh" on-refresh="refreshData()"></ion-refresher>
+        <div class="list-default">
+            <div class="block">
+                <div ng-repeat="item in items">
+                    <a ui-sref="app.edit_bank_account({accId: item.id})">
+                        <div class="item item-avatar item-icon-left">
+                            <i class="icon ion-ios-circle-outline"></i>
+
+                            <div class="align-left">
+                                {{ item.bank_name }}
+                                <h4>{{ item.number }}</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a class="item" ui-sref="app.add_bank_account">
+                    Add another bank account
+                </a>
+            </div>
+        </div>
+    </ion-content>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="5%"></ion-infinite-scroll>
+</ion--view>

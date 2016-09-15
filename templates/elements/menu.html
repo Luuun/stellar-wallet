@@ -1,0 +1,58 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <!-- Temp disable -->
+                <!--<button class="button button-icon icon ion-camera" menu-toggle="right" ng-click="scanQr()"></button>-->
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left" class="app-side-menu">
+        <ion-content class="container-body">
+            <ion-list class="app-side-menu-list">
+                <ion-item menu-close ui-sref="app.home">
+                    Home
+                </ion-item>
+                <ion-item menu-close ui-sref="app.deposit">
+                    Deposit
+                </ion-item>
+                <ion-item menu-close ui-sref="app.withdraw_to">
+                    Withdraw
+                </ion-item>
+                <ion-item menu-close ui-sref="app.receive">
+                    Receive
+                </ion-item>
+                <ion-item menu-close ui-sref="app.currency_accounts">
+                    Accounts
+                </ion-item>
+                <ion-item menu-close ui-sref="app.promotion_code">
+                    Promotions
+                </ion-item>
+                <ion-item menu-close ui-sref="app.notifications">
+                    Notifications
+                </ion-item>
+                <ion-item menu-close ui-sref="app.settings">
+                    Settings
+                </ion-item>
+                <ion-item menu-close ui-sref="app.about">
+                    About
+                </ion-item>
+                <!--<ion-item menu-close ui-sref="app.help">-->
+                    <!--Help-->
+                <!--</ion-item>-->
+                <ion-item class="item-complex" menu-close ng-click="logout()">
+                    <a class="item-content"> Logout </a>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
