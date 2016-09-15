@@ -1,5 +1,5 @@
 /*global Firebase, console, angular */
-angular.module('generic-client.services.currency_accounts', [])
+angular.module('stellar-wallet.services.currency_accounts', [])
 
     .service('CurrencyAccounts', function ($http, API) {
         'use strict';

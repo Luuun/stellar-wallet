@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.request', [])
+angular.module('stellar-wallet.controllers.request', [])
 
     .controller('RequestCtrl', function ($scope, $state) {
         'use strict';

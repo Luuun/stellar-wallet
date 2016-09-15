@@ -1,5 +1,5 @@
 /*global Firebase, console, angular */
-angular.module('generic-client.services.accounts', [])
+angular.module('stellar-wallet.services.accounts', [])
 
     .factory('authInterceptor', function (API, Auth, $location) {
         'use strict';

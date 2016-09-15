@@ -1,5 +1,5 @@
 /*global Firebase, console, angular */
-angular.module('generic-client.services.transactions', [])
+angular.module('stellar-wallet.services.transactions', [])
 
     .service('Balance', function ($http, API) {
         'use strict';

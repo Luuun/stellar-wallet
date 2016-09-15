@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.settings', [])
+angular.module('stellar-wallet.controllers.settings', [])
 
     .controller('SettingsCtrl', function ($scope) {
         'use strict';

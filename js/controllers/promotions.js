@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.promotions', [])
+angular.module('stellar-wallet.controllers.promotions', [])
 
     .controller('PromotionCodeCtrl', function ($scope, $state) {
         'use strict';

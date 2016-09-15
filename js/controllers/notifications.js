@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.notifications', [])
+angular.module('stellar-wallet.controllers.notifications', [])
 
     .controller('NotificationsCtrl', function ($scope) {
         'use strict';

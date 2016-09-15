@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.send', [])
+angular.module('stellar-wallet.controllers.send', [])
 
     .controller('SendCtrl', function ($scope, $state, $window) {
         'use strict';

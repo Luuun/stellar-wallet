@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.transactions', [])
+angular.module('stellar-wallet.controllers.transactions', [])
 
     .controller('TransactionsCtrl', function ($scope, $state, $http, $window, $ionicModal, $ionicLoading, Transaction, Balance, Conversions) {
         'use strict';

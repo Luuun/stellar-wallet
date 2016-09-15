@@ -1,4 +1,4 @@
-angular.module('generic-client.filters.contacts', [])
+angular.module('stellar-wallet.filters.contacts', [])
 
     .filter('searchContacts', function () {
         return function (items, query) {

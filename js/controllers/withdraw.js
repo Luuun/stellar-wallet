@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.withdraw', [])
+angular.module('stellar-wallet.controllers.withdraw', [])
 
     .controller('WithdrawToCtrl', function ($scope, $state, $window, $ionicHistory, $stateParams, BitcoinWithdrawalAccount, BankAccount) {
         'use strict';

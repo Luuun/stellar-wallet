@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.deposit', [])
+angular.module('stellar-wallet.controllers.deposit', [])
 
     .controller('DepositCtrl', function ($scope, DepositDetails, TokenInfo) {
         'use strict';

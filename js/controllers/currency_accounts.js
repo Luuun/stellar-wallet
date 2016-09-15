@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.currency_accounts', [])
+angular.module('stellar-wallet.controllers.currency_accounts', [])
 
     .controller('CurrencyAccountsCtrl', function ($scope, $window, $ionicPopup, $ionicModal, $state, $stateParams, $ionicLoading, CurrencyAccounts, Conversions) {
         'use strict';

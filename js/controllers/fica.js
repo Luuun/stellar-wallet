@@ -1,4 +1,4 @@
-angular.module('generic-client.controllers.fica', [])
+angular.module('stellar-wallet.controllers.fica', [])
 
     .controller('FicaRequirementsCtrl', function ($scope, $state) {
         'use strict';
