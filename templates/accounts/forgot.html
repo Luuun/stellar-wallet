@@ -15,13 +15,6 @@
                         <div ng-message="email" class="form-error">Please enter a valid email address.</div>
                     </div>
                 </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label">Company</span>
-                    <input ng-model="user.company_id" type="text" name="company_id" placeholder="Company ID" required>
-                    <div ng-messages="forgotForm.company_id.$error" role="alert" ng-show='forgotForm.$submitted || forgotForm.company_id.$dirty'>
-                        <div ng-message="required" class="form-error">Please enter a Company ID.</div>
-                    </div>
-                </label>
                 <button class="button button-full" ng-click="resetPassword(forgotForm)">Reset Email</button>
             </div>
         </form>
