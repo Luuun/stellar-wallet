@@ -10,12 +10,12 @@ angular.module('stellar-wallet.controllers.transactions', [])
         //
         //            console.log(result);
         //
-        //            $state.go('app.flip_tip', {
+        //            $state.go('app.send', {
         //                email: result.text
         //            });
         //
         //            if (result.cancelled == 1) {
-        //                 $state.go('app.scan_tip')
+        //                 $state.go('app.home')
         //            }
         //
         //        },
@@ -23,7 +23,7 @@ angular.module('stellar-wallet.controllers.transactions', [])
         //            alert("Scanning failed: " + error);
         //        }
         //    );
-        //}
+        //};
 
         $scope.refreshData = function () {
             var getBalance = Balance.get();
