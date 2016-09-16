@@ -3,6 +3,28 @@ angular.module('stellar-wallet.controllers.transactions', [])
     .controller('TransactionsCtrl', function ($scope, $state, $http, $window, $ionicModal, $ionicLoading, Transaction, Balance, Conversions) {
         'use strict';
 
+        //$scope.scanQr = function () {
+        //
+        //    cordova.plugins.barcodeScanner.scan(
+        //        function (result) {
+        //
+        //            console.log(result);
+        //
+        //            $state.go('app.flip_tip', {
+        //                email: result.text
+        //            });
+        //
+        //            if (result.cancelled == 1) {
+        //                 $state.go('app.scan_tip')
+        //            }
+        //
+        //        },
+        //        function (error) {
+        //            alert("Scanning failed: " + error);
+        //        }
+        //    );
+        //}
+
         $scope.refreshData = function () {
             var getBalance = Balance.get();
 
