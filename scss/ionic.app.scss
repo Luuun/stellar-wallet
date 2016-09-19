@@ -324,7 +324,7 @@ input.ng-invalid, input.ng-dirty {
 // Header
 .custom-header {
   margin-top: 44px;
-  height: 100px !important;
+  height: 1000px !important;
   width: 100%;
   padding-top: 8px;
   padding-bottom: 0;
@@ -363,7 +363,7 @@ input.ng-invalid, input.ng-dirty {
   }
 }
 
-.platform-webview.platform-ios.platform-cordova .header-custom {
+.platform-webview.platform-ios.platform-cordova .custom-header {
   margin-top: 63px;
 }
 
@@ -380,7 +380,6 @@ input.ng-invalid, input.ng-dirty {
 
 // Container
 .container-body {
-  margin-top: 10px;
 }
 
 .container-default {
@@ -442,13 +441,13 @@ input.ng-invalid, input.ng-dirty {
 }
 
 // Header
-.bar.bar-header {
-  height: 55px !important;
-  .title {
-    font-weight: 400;
-    top: 5px;
-  }
-}
+//.bar.bar-header {
+//  height: 55px !important;
+//  .title {
+//    font-weight: 400;
+//    top: 5px;
+//  }
+//}
 
 // Image
 .company-logo {
