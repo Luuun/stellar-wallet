@@ -81,7 +81,7 @@ angular.module('stellar-wallet.controllers.send', [])
                         amount: amount,
                         note: note,
                         to: to,
-                        currency: $scope.currency.code
+                        currency: $scope.currency
                     });
                 } else {
                     $ionicLoading.hide();
@@ -101,4 +101,5 @@ angular.module('stellar-wallet.controllers.send', [])
         $scope.amount = $stateParams.amount;
         $scope.note = $stateParams.note;
         $scope.to = $stateParams.to;
+        $scope.currency = $stateParams.currency;
     });
