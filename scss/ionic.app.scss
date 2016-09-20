@@ -65,6 +65,7 @@ $white: #FFF;
 
 .align-right {
   float: right;
+  text-align: right;
 }
 
 .no-margin {
@@ -253,6 +254,20 @@ $white: #FFF;
   margin-bottom: 5px !important;
   margin-top: 0 !important;
 
+  .withdraw-top {
+    padding-top: 18px;
+  }
+
+  .default-top {
+    padding-top: 12px;
+  }
+
+  .no-padding {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-right: 2px;
+  }
+
   .block {
     &:nth-child(odd) {
       .item {
@@ -261,10 +276,9 @@ $white: #FFF;
     }
 
     .item {
+
       .icon {
         font-size: 45px;
-        padding-left: 3px;
-        padding-right: 3px;
       }
 
       .align-right {
@@ -297,6 +311,10 @@ $white: #FFF;
       }
     }
   }
+}
+
+.item-avatar {
+  padding-left: 50px;
 }
 
 // Form error

@@ -168,7 +168,8 @@ angular.module('stellar-wallet', ['ionic',
                 params: {
                     amount: null,
                     note: null,
-                    to: null
+                    to: null,
+                    currency: null
                 }
             })
 
