@@ -40,7 +40,7 @@ angular.module('stellar-wallet.controllers.accounts', [])
                     template: 'Signing Up...'
                 });
 
-                User.register(form.first_name.$viewValue, form.email.$viewValue, COMPANY, form.password1.$viewValue, form.password2.$viewValue)
+                User.register(form.email.$viewValue, COMPANY, form.password1.$viewValue, form.password2.$viewValue)
                     .then(function (res) {
                     if (res.status === 201) {
                         $ionicLoading.hide();
