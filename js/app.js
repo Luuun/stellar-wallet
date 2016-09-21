@@ -509,6 +509,20 @@ angular.module('stellar-wallet', ['ionic',
                 params: {
                     first_name: null,
                     last_name: null,
+                    metadata: null
+                }
+            })
+
+            .state('app.username', {
+                url: '/username',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/settings/username.html',
+                        controller: 'UsernameCtrl'
+                    }
+                },
+                params: {
+                    username: null
                 }
             })
 

@@ -29,7 +29,8 @@ angular.module('stellar-wallet.controllers.settings', [])
                         "email_address": res.data.email,
                         "id_number": res.data.id_number,
                         "nationality": nationality,
-                        "metadata": res.data.metadata
+                        "metadata": res.data.metadata,
+                        "username": res.data.username
                     };
 
                     $scope.countries = Countries.list();
@@ -56,7 +57,8 @@ angular.module('stellar-wallet.controllers.settings', [])
                     }
                 }
 
-                PersonalDetails.create(form.first_name.$viewValue,
+                PersonalDetails.create(
+                    form.first_name.$viewValue,
                     form.last_name.$viewValue,
                     form.email_address.$viewValue,
                     form.id_number.$viewValue,
@@ -74,6 +76,50 @@ angular.module('stellar-wallet.controllers.settings', [])
                     });
 
                 $state.go('app.personal_details', {});
+            }
+        };
+        $scope.refreshData();
+    })
+
+    .controller('UsernameCtrl', function ($scope, $ionicPopup, $ionicModal, $state, $ionicLoading, PersonalDetails, Countries) {
+        'use strict';
+
+        $scope.refreshData = function () {
+            var getPersonalDetails = PersonalDetails.get();
+
+            getPersonalDetails.success(
+                function (res) {
+
+                    $scope.data = {"username": res.data.username};
+                }
+            );
+
+            getPersonalDetails.catch(function (error) {
+
+            });
+        };
+
+        $scope.submit = function (form) {
+            $ionicLoading.show({
+                template: 'Saving Username...'
+            });
+
+            if (form.$valid) {
+
+                PersonalDetails.create_username(form.username.$viewValue).then(function (res) {
+
+                        if (res.status === 200) {
+                            $ionicLoading.hide();
+                        } else {
+                            $ionicLoading.hide();
+                            $ionicPopup.alert({title: "Error", template: res.message});
+                        }
+                    }).catch(function (error) {
+                        $ionicPopup.alert({title: 'Authentication failed', template: error.message});
+                        $ionicLoading.hide();
+                    });
+
+                $state.go('app.username', {});
             }
         };
         $scope.refreshData();
@@ -371,18 +417,21 @@ angular.module('stellar-wallet.controllers.settings', [])
                     form.new_password.$viewValue,
                     form.confirm_password.$viewValue).then(function (res) {
 
-                    if (res.status === 200) {
+                        if (res.status === 200) {
+                            $ionicLoading.hide();
+                            $ionicPopup.alert({
+                                title: "Password Changes",
+                                template: "Password was successfully changed."
+                            });
+                            $state.go('app.security', {});
+                        } else {
+                            $ionicLoading.hide();
+                            $ionicPopup.alert({title: "Error", template: "Invalid password."});
+                        }
+                    }).catch(function (error) {
+                        $ionicPopup.alert({title: 'Authentication failed', template: error.message});
                         $ionicLoading.hide();
-                        $ionicPopup.alert({title: "Password Changes", template: "Password was successfully changed."});
-                        $state.go('app.security', {});
-                    } else {
-                        $ionicLoading.hide();
-                        $ionicPopup.alert({title: "Error", template: "Invalid password."});
-                    }
-                }).catch(function (error) {
-                    $ionicPopup.alert({title: 'Authentication failed', template: error.message});
-                    $ionicLoading.hide();
-                });
+                    });
             }
         };
     })
