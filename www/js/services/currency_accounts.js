@@ -15,4 +15,11 @@ angular.module('stellar-wallet.services.currency_accounts', [])
                 currency: currency
             });
         };
+
+        self.create = function (code, issuer) {
+            return $http.post(API + '/accounts/currencies/external/add', {
+                code: code,
+                issuer: issuer
+            });
+        };
     })

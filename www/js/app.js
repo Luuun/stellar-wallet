@@ -290,6 +290,32 @@ angular.module('stellar-wallet', ['ionic',
                 }
             })
 
+            // Add Currency Accounts
+            .state('app.add_currency', {
+                url: '/add_currency',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/currency_accounts/add_currency.html',
+                        controller: 'AddCurrencyCtrl'
+                    }
+                }
+            })
+
+            // Add Currency Accounts Confirm
+            .state('app.add_currency_confirm', {
+                url: '/add_currency_confirm',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/currency_accounts/add_currency_confirm.html',
+                        controller: 'AddCurrencyConfirmCtrl'
+                    }
+                },
+                params: {
+                    code: null,
+                    issuer: null
+                }
+            })
+
             // Promotion
             .state('app.promotion_code', {
                 url: '/promotion_code',
