@@ -26,9 +26,6 @@ angular.module('stellar-wallet.controllers.currency_accounts', [])
                 template: 'Switching Account Token...'
             });
 
-            console.log(account_reference)
-            console.log(account_currency)
-
             CurrencyAccounts.set(account_reference, account_currency).then(function (res) {
                 if (res.status === 200) {
                     $ionicLoading.hide();
@@ -45,4 +42,4 @@ angular.module('stellar-wallet.controllers.currency_accounts', [])
         };
 
         $scope.listData();
-    })
+    });
