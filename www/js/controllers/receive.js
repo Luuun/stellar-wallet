@@ -12,7 +12,7 @@ angular.module('stellar-wallet.controllers.receive', [])
                 $scope.myAddress = JSON.parse($window.localStorage.myAddress);
             }
             $scope.refreshData();
-            if (res.data.data.external_account.account_id) {
+            if (res.data.data.username) {
                 $scope.account = res.data.data.external_account.account_id
             } else {
                 $state.go('app.username');
