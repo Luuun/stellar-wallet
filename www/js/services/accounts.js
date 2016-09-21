@@ -77,6 +77,7 @@ angular.module('stellar-wallet.services.accounts', [])
         };
 
         self.logout = function () {
+            console.log("Logout and remove.");
             $window.localStorage.removeItem('jwtToken');
             $window.localStorage.removeItem('user');
             $window.localStorage.removeItem('myTransactions');
