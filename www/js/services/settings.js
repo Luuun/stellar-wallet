@@ -9,7 +9,7 @@ angular.module('stellar-wallet.services.settings', [])
             return $http.get(API + '/accounts/users/');
         };
 
-        self.create = function (first_name, last_name, email, id_number, nationality, metadata) {
+        self.create = function (first_name, last_name, email, id_number, nationality, metadata, username) {
 
             return $http.put(API + '/accounts/users/', {
                 first_name: first_name,
@@ -17,7 +17,15 @@ angular.module('stellar-wallet.services.settings', [])
                 email: email,
                 id_number: id_number,
                 nationality: nationality,
-                metadata: metadata
+                metadata: metadata,
+                username: username
+            });
+        };
+
+        self.create_username = function (username) {
+
+            return $http.put(API + '/accounts/users/', {
+                username: username
             });
         };
     })
