@@ -42,4 +42,43 @@ angular.module('stellar-wallet.controllers.currency_accounts', [])
         };
 
         $scope.listData();
+    })
+
+    .controller('AddCurrencyCtrl', function ($scope, $window, $ionicPopup, $ionicModal, $state, $stateParams, $ionicLoading, CurrencyAccounts, Conversions) {
+        'use strict';
+
+        $scope.submit = function (form) {
+            if (form.$valid) {
+                $state.go('app.add_currency_confirm', {
+                    code: form.code.$viewValue,
+                    issuer: form.issuer.$viewValue
+                });
+            }
+        };
+    })
+
+    .controller('AddCurrencyConfirmCtrl', function ($scope, $window, $ionicPopup, $ionicModal, $state, $stateParams, $ionicLoading, CurrencyAccounts, Conversions) {
+        'use strict';
+
+        $scope.code = $stateParams.code;
+        $scope.issuer = $stateParams.issuer;
+
+        $scope.submit = function (code, issuer) {
+            $ionicLoading.show({
+                template: 'Adding...'
+            });
+
+            CurrencyAccounts.create(code, issuer).then(function (res) {
+                if (res.status === 200 || res.status === 201) {
+                    $ionicLoading.hide();
+                    $state.go('app.currency_accounts');
+                } else {
+                    $ionicLoading.hide();
+                    $ionicPopup.alert({title: "Error", template: res.data.message});
+                }
+            }).catch(function (error) {
+                $ionicPopup.alert({title: 'Authentication failed', template: error.message});
+                $ionicLoading.hide();
+            });
+        };
     });

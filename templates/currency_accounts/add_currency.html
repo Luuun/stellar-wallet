@@ -3,32 +3,27 @@
         <form name="AddCurrencyForm" method="post" novalidate>
             <ion-content class="container-body">
                 <div class="list">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Address line 1</span>
-                        <input ng-model="data.line_1" name="line_1" type="text" placeholder="e.g. East building, 3rd floor."
-                               value="{{ data.line_1 }}">
+                    <label class="item item-select">
+                        <span class="input-label">Currency</span>
+                        <select ng-model="data.code" name="code" required>
+                            <option selected>{{ data.code }}</option>
+                            <option>USD</option>
+                            <option>ZAR</option>
+                            <option>EUR</option>
+                            <option>XBT</option>
+                            <option>XLM</option>
+                        </select>
+                        <div ng-messages="AddCurrencyForm.code.$error" role="alert" ng-show='AddCurrencyForm.$submitted || AddCurrencyForm.code.$dirty'>
+                            <div ng-message="required" class="form-error">Please enter a currency.</div>
+                        </div>
                     </label>
                     <label class="item item-input item-stacked-label">
-                        <span class="input-label">Address line 2</span>
-                        <input ng-model="data.line_2" name="line_2" type="text" placeholder="e.g. 14 Back rd."
-                               value="{{ data.line_2 }}">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">City</span>
-                        <input ng-model="data.city" name="city" type="text" placeholder="e.g. Cape Town" value="{{ data.city }}">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Province/State</span>
-                        <input ng-model="data.state_province" name="state_province" type="text" placeholder="e.g. Western Cape"
-                               value="{{ data.state_province }}">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Country</span>
-                        <input ng-model="data.country" name="country" type="text" placeholder="e.g. South Africa" value="{{ data.country }}">
-                    </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">ZIP/Postal code</span>
-                        <input ng-model="data.code" name="code" type="text" placeholder="e.g. 8100" value="{{ data.code }}">
+                        <span class="input-label">Issuer</span>
+                        <input ng-model="data.issuer" name="issuer" type="text" placeholder="Issuer reference"
+                               value="{{ data.issuer }}" required>
+                        <div ng-messages="AddCurrencyForm.issuer.$error" role="alert" ng-show='AddCurrencyForm.$submitted || AddCurrencyForm.issuer.$dirty'>
+                            <div ng-message="required" class="form-error">Please enter an issuer.</div>
+                        </div>
                     </label>
                 </div>
             </ion-content>
@@ -37,8 +32,8 @@
             <ion-footer-bar class="high-footer bar-dark">
             </ion-footer-bar>
 
-            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(AddressForm)" linked="clickMe">
-                <h1 class="title">Save</h1>
+            <button keyboard-attach class="high-footer bar bar-footer" ng-click="submit(AddCurrencyForm)" linked="clickMe">
+                <h1 class="title">Add</h1>
             </button>
         </form>
     </div>
