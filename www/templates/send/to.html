@@ -7,7 +7,7 @@
                     <span class="input-label">Send money to</span>
                     <input name="to" type="search" ng-model="data.to" required
                            ng-keyup="getValue()"
-                           placeholder="Enter name, email, mobile">
+                           placeholder="Enter Stellar Address">
                     </input>
 
                     <div ng-messages="sendToForm.to.$error" role="alert" ng-show='sendToForm.$submitted || sendToForm.to.$dirty'>
