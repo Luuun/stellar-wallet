@@ -9,7 +9,7 @@ angular.module('stellar-wallet.services.transactions', [])
         }
     })
 
-    .service('Transaction', function ($http, API) {
+    .service('Transaction', function ($http, API, CurrencyAccounts) {
         'use strict';
         var self = this;
 
@@ -22,10 +22,18 @@ angular.module('stellar-wallet.services.transactions', [])
         };
 
         self.create = function (amount, note, to) {
+
+            var issuer = '';
+            var account = '';
+            var metadata = {};
+
             return $http.post(API + '/transactions/send/', {
                 amount: amount,
                 note: note,
-                recipient: to
+                recipient: to,
+                issuer: issuer,
+                account: account,
+                metadata: metadata
             });
         };
     })

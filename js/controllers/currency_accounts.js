@@ -8,6 +8,8 @@ angular.module('stellar-wallet.controllers.currency_accounts', [])
                 function (res) {
                     var items = [];
 
+                    console.log(res.data);
+
                     for (var i = 0; i < res.data.length; i++) {
                         res.data[i].balance = Conversions.from_cents(res.data[i].balance);
                         items.push(res.data[i]);
@@ -21,12 +23,12 @@ angular.module('stellar-wallet.controllers.currency_accounts', [])
             );
         };
 
-        $scope.setToken = function (account_reference, account_currency) {
+        $scope.setToken = function (currency, account, issuer) {
             $ionicLoading.show({
                 template: 'Switching Account Token...'
             });
 
-            CurrencyAccounts.set(account_reference, account_currency).then(function (res) {
+            CurrencyAccounts.set(currency, account, issuer).then(function (res) {
                 if (res.status === 200) {
                     $ionicLoading.hide();
                     $scope.listData();
@@ -44,8 +46,14 @@ angular.module('stellar-wallet.controllers.currency_accounts', [])
         $scope.listData();
     })
 
-    .controller('AddCurrencyCtrl', function ($scope, $window, $ionicPopup, $ionicModal, $state, $stateParams, $ionicLoading, CurrencyAccounts, Conversions) {
+    .controller('AddCurrencyCtrl', function ($scope, $window, $ionicPopup, $ionicModal, $state, User) {
         'use strict';
+
+        User.getInfo().then(function (res) {
+            if (res.data.data.username === '') {
+                $state.go('app.username');
+            }
+        });
 
         $scope.submit = function (form) {
             if (form.$valid) {
@@ -57,7 +65,7 @@ angular.module('stellar-wallet.controllers.currency_accounts', [])
         };
     })
 
-    .controller('AddCurrencyConfirmCtrl', function ($scope, $window, $ionicPopup, $ionicModal, $state, $stateParams, $ionicLoading, CurrencyAccounts, Conversions) {
+    .controller('AddCurrencyConfirmCtrl', function ($scope, $window, $ionicPopup, $ionicModal, $state, $stateParams, $ionicLoading, CurrencyAccounts) {
         'use strict';
 
         $scope.code = $stateParams.code;

@@ -1,7 +1,10 @@
 <ion-view view-title="">
     <div class="custom-header">
         <div class="col text-center">
-            <h2>You are adding '{{ code }}'' as a currency with an issuer '{{ issuer }}'.</h2>
+            <h2>You are adding {{ code }} as a <br>
+                currency with an issuer <br>
+                {{issuer.length > 20 ? issuer.slice(0, 6) + '...' + issuer.slice(issuer.length - 6, issuer.length) :
+                issuer }}.</h2>
         </div>
     </div>
 
