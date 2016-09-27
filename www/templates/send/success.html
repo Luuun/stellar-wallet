@@ -1,11 +1,22 @@
-<ion-view view-title="" hide-back-button="true" hide-nav-bar="true">
-    <ion-content>
-        <div class="container-success row text-center">
-            <div class="col col-100">
-                <h2>You have sent {{currency.symbol}} {{ amount }} to {{to.length > 20 ? to.slice(0, 10) + '...' + to.slice(to.length - 5, to.length) : to }}.</h2>
-            </div>
+<ion-view view-title="" hide-back-button="true">
+
+    <div class="custom-header">
+        <div class="col text-center">
+            <h2>You have sent {{currency.symbol}} {{ amount }} to <br>
+                    {{to.length > 40 ? to.slice(0, 10) + '...' + to.slice(to.length - 5, to.length) : to }}.</h2>
+        </div>
+    </div>
+
+    <ion-content class="custom-header-margin">
+        <div class="custom-body">
         </div>
     </ion-content>
+
+    <div class="row">
+        <a class="high-footer bar bar-footer" menu-close href="#/app/dashboard">
+        <h1 class="title">Done</h1>
+    </a>
+    </div>
 
     <a class="high-footer bar bar-footer" menu-close href="#/app/dashboard">
         <h1 class="title">Done</h1>

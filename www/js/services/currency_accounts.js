@@ -9,10 +9,11 @@ angular.module('stellar-wallet.services.currency_accounts', [])
             return $http.get(API + '/accounts/tokens/');
         };
 
-        self.set = function (reference, currency) {
+        self.set = function (currency, account, issuer) {
             return $http.post(API + '/accounts/tokens/set/', {
-                reference: reference,
-                currency: currency
+                currency: currency,
+                account: account,
+                issuer: issuer
             });
         };
 
