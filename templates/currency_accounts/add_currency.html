@@ -13,7 +13,7 @@
                     </label>
                     <label class="item item-input item-stacked-label">
                         <span class="input-label">Issuer</span>
-                        <input ng-model="data.issuer" name="issuer" type="text" placeholder="Issuer Reference"
+                        <input ng-model="data.issuer" name="issuer" type="text" placeholder="Account ID, Federated Address or Domain"
                                value="{{ data.issuer }}" required>
                         <div ng-messages="AddCurrencyForm.issuer.$error" role="alert" ng-show='AddCurrencyForm.$submitted || AddCurrencyForm.issuer.$dirty'>
                             <div ng-message="required" class="form-error">Please enter an issuer.</div>
