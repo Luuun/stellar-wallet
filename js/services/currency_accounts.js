@@ -23,4 +23,4 @@ angular.module('stellar-wallet.services.currency_accounts', [])
                 issuer: issuer
             });
         };
-    })
+    });
